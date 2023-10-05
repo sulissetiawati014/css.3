@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Transition 2</title>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+		}
+		.container {
+           width: 1000px;  
+           margin: 60px auto;
+           border: 5px solid black;
+
+		}
+		
+		.kotak 1,2,3,4,5,6 {
+			width: 100px;
+			height: 100px;
+			background-color: salmon;
+			text-align: center;
+			line-height: 5px 0;
+
+		}
+	     	.kotak1 { transition: all 3s ease; }
+	    	.kotak2 { transition: all 3s ease-in; }
+	    	.kotak3 { transition: all 3s ease-out; }
+		    .kotak4 { transition: all 3s ease-in-out; }
+		    .kotak5 { transition: all 3s linear; }
+	    	.kotak6 { transition: all 3s cubic-bezier(0,0,1,2); }
+	    .container:hover .kotak{
+			transform: rotate(720deg);
+			margin-left: 800px;
+			background-color: royalblue;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+	  <div class="kotak1">ease</div>
+	  <div class="kotak2">ease-in</div>
+	  <div class="kotak3">ease-out</div>
+	  <div class="kotak4">ease-in-out</div>
+      <div class="kotak5">linear</div>
+      <div class="kotak6">cubic-bezier</div>
+
+  </div>
+</body>
+</html>
+
