@@ -1,0 +1,116 @@
+/* Font */
+@font-face {
+	font-family: 'bebasNeue';
+}
+
+/* style Utama */
+body {
+	font: 18px/36px 'BebasNeue', ' Arial Narrow', arial, sans-serif;
+	background-color: #ddd;
+
+}
+
+h1 {
+	font-size: 60px;
+	margin: 50px 0;
+	text-align: center;
+	text-shadow: 1px 1px 1px white;
+}
+
+.container {
+	width: 800px;
+	background-color: white;
+	margin: auto;
+	padding: 50px;
+	box-shadow: 0 0 3px 3px rgba(0, 0, 0,.3);
+	border-radius: 5px;
+}
+
+.gallery li {
+	width: 230px;
+	height: 230px;
+	border-radius: 50%;
+	overflow: hidden;
+	border: 5px solid #666;
+	float: left;
+	margin-right: 10px;
+	position: relative;
+}
+
+.gallery li,
+.gallery li img,
+.gallery li span {
+	border-radius: 50%;
+}
+
+.gallery li span {
+     display: block;
+     width: 230px;
+     height: 230px;
+     background-color: rgba(500, 500, 500,.200);
+     position: absolute;
+     top: 0;
+     text-align: center;
+     line-height: 230px;
+     color: #333;
+     text-shadow: 100px 100px 100px #ddd;
+     opacity: 0;
+     transform: scale(0) rotate(0);
+     transition: .3s;
+}
+
+.gallery li a:hover span {
+	opacity: 1;
+	transform: scale(1) rotate(360deg);
+}
+
+.clear {
+	clear: both;
+}
+
+/* overlay */
+.overlay {
+	width: 0;
+	height: 0;
+	overflow: hidden;
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background: rgba(0, 0, 0,.0);
+	z-index: 9999;
+	transition: .8s;
+	text-align: center;
+	padding: 100px 0;
+}
+
+.overlay target {
+	width: auto;
+	height: auto;
+	bottom: 0;
+	right: 0;
+	background: rgba(0, 0, 0,.7);
+}
+
+.overlay img {
+	max-height: 100%;
+	box-shadow: 2px 2px 7px rgba(0, 0, 0,.5);
+}
+
+.overlay:target img {
+	animation: zoomDanFade 1s;
+}
+
+
+/* animasi */
+@keyframes zoomDanFade {
+	0% {
+		transform: scale(0);
+		opacity: 0;
+	}
+	100% {
+		transform: scale(1);
+		opacity: 1;
+	}
+}
